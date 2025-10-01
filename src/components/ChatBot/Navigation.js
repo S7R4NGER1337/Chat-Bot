@@ -8,8 +8,8 @@ export default function Navigation() {
         <p className={styles.navigationTitle}>chat-bot</p>
       </div>
       <div className={styles.navigationActions}>
-        <p className={styles.navigationAction}>-</p>
-        <p className={styles.navigationAction}>x</p>
+        <img className={styles.navigationAction} src="/minus-solid-full.svg" alt="minimize" />
+        <img className={styles.navigationAction} src="/xmark-solid-full.svg" alt="xMark" />
       </div>
     </div>
   );
