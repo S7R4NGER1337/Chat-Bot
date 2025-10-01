@@ -34,5 +34,6 @@
 }
 
 .navigationAction{
+    cursor: pointer;
     width: 1rem;
 }
