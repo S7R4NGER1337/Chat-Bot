@@ -1,0 +1,27 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    border-bottom: 0.1em solid gainsboro;
+}
+
+.statusDot {
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: #22c55e;
+    border-radius: 5rem;
+}
+
+.headerInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.headerActions{
+    display: flex;
+    gap: 1em;
+}
