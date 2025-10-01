@@ -1,4 +1,4 @@
-.headerContainer {
+.navigationContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,14 +14,14 @@
     border-radius: 5rem;
 }
 
-.headerInfo{
+.navigationInfo{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
 }
 
-.headerActions{
+.navigationActions{
     display: flex;
     gap: 1em;
 }

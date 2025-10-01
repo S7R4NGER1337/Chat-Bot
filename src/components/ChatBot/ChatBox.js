@@ -1,5 +1,5 @@
 import styles from "./chatBox.module.css";
-import Header from "./Header";
+import Header from "./Navigation";
 
 export default function ChatBox() {
   return (
