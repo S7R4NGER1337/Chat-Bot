@@ -1,9 +1,9 @@
-import './App.css';
 import ChatBox from './components/ChatBot/ChatBox';
+import styles from './app.module.css'
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.appContainer}>
       <ChatBox />
     </div>
   );
