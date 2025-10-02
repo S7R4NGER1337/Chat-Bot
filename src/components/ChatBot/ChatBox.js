@@ -28,7 +28,7 @@ export default function ChatBox() {
           <ChatMessage text={message.text} type={message.type} />
         ))}
       </div>
-      <ChatInput />
+      <ChatInput setMessages={setMessages}/>
     </div>
   );
 }
