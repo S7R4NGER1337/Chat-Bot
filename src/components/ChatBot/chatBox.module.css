@@ -1,4 +1,4 @@
-.chatBoxContainer{
+.chatBoxContainer {
     position: fixed;
     bottom: 5%;
     right: 5%;
@@ -11,10 +11,13 @@
     border-radius: 0.6em;
 }
 
-.messagesContainer{
+.messagesContainer {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    gap: 1em;
     overflow: auto;
-    overflow-anchor: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 12%;
 }
