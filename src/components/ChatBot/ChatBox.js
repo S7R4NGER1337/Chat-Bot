@@ -8,17 +8,9 @@ import RelatedQuestions from "./RelatedQuestions";
 export default function ChatBox() {
   const [messages, setMessages] = useState([
     {
-      text: "Test",
-      type: "user",
-    },
-    {
-      text: "Test2",
+      text: "Hello how can I help you ?",
       type: "bot",
-    },
-    {
-      text: "Test3",
-      type: "user",
-    },
+    }
   ]);
   const [relatedQuestions, setRelatedQuestions] = useState([])
 
