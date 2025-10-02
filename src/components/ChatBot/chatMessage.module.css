@@ -1,0 +1,18 @@
+.chatMessage{
+    padding: 1em;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: 1em;
+}
+
+.userMessage{
+    background-color: #137fec;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0em;
+}
+
+.botMessage{
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 0em;
+}
