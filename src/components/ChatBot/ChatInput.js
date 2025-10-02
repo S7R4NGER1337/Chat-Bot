@@ -11,39 +11,40 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
     findBotQuestion();
     setMessage("");
   }
-
-  function findBotQuestion() {
-    const keyWords = message.split(" ");
-    const botResponses = [];
+function findBotQuestion() {
+  const keyWords = message.toLowerCase().split(" ");
+  const scored = FAQ.map((faq) => {
+    let score = 0;
     keyWords.forEach((word) => {
-      word = word.toLowerCase();
-      const response = FAQ.filter((response) =>
-        response.question.toLowerCase().includes(word)
-      );
-      botResponses.push(...response);
+      if (faq.question.toLowerCase().includes(word)) {
+        score++;
+      }
     });
-    if (botResponses.length > 3) {
-      setRelatedQuestions(botResponses.splice(3, botResponses.length - 3));
-      return;
-    }
-    if (botResponses.length === 0) {
-      setMessages((prev) => [
-        { text: "example@example.com", type: "bot" },
-        { text: "You can contact us in your mail.", type: "bot" },
-        ...prev,
-      ]);
-      return;
-    }
-    if (botResponses.length === 1) {
-      setMessages((prev) => [
-        { text: "Do you have any other questions ?", type: "bot" },
-        { text: botResponses[0].answer, type: "bot" },
-        ...prev,
-      ]);
-      return;
-    }
-    setRelatedQuestions(botResponses);
+    return { ...faq, score };
+  }).filter((faq) => faq.score > 0);
+  scored.sort((a, b) => b.score - a.score);
+  
+  if (scored.length === 0) {
+    setMessages((prev) => [
+      { text: "example@example.com", type: "bot" },
+      { text: "You can contact us in your mail.", type: "bot" },
+      ...prev,
+    ]);
+    return;
   }
+
+  if (scored.length === 1) {
+    setMessages((prev) => [
+      { text: "Do you have any other questions ?", type: "bot" },
+      { text: scored[0].answer, type: "bot" },
+      ...prev,
+    ]);
+    return;
+  }
+
+  const topMatches = scored.slice(0, 3);
+  setRelatedQuestions(topMatches);
+}
 
   return (
     <div className={styles.chatInputContainer}>
