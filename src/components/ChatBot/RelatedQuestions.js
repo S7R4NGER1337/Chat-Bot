@@ -16,6 +16,7 @@ export default function RelatedQuestions({
             onClick={() => {
               setMessages((prev) => [
                 ...prev,
+                { text: option.question, type: 'user'},
                 { text: option.answer, type: "bot" },
                 { text: "Do you have any other questions ?", type: "bot" },
               ]);
