@@ -7,7 +7,7 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
 
   function sendMessage() {
     if (message === "") return;
-    // setMessages((prev) => [...prev, { text: message, type: "user" }]);
+    setMessages((prev) => [...prev, { text: message, type: "user" }]);
     findBotQuestion()
     setMessage("");
   }

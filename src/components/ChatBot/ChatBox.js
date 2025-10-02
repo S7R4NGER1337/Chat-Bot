@@ -22,6 +22,10 @@ export default function ChatBox() {
   ]);
   const [relatedQuestions, setRelatedQuestions] = useState([])
 
+  function hideRelatedQuestions() {
+    setRelatedQuestions([])
+  }
+
   return (
     <div className={styles.chatBoxContainer}>
       <Header />
@@ -30,7 +34,7 @@ export default function ChatBox() {
           <ChatMessage text={message.text} type={message.type} key={index}/>
         ))}
       </div>
-      {relatedQuestions.length > 0 && <RelatedQuestions options={relatedQuestions}/>}
+      {relatedQuestions.length > 0 && <RelatedQuestions options={relatedQuestions} setMessages={setMessages} hideRelatedQuestions={hideRelatedQuestions}/>}
       <ChatInput setMessages={setMessages} setRelatedQuestions={setRelatedQuestions}/>
     </div>
   );
