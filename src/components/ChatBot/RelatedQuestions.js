@@ -17,6 +17,7 @@ export default function RelatedQuestions({
               setMessages((prev) => [
                 ...prev,
                 { text: option.answer, type: "bot" },
+                { text: "Do you have any other questions ?", type: "bot" },
               ]);
               hideRelatedQuestions();
             }}
