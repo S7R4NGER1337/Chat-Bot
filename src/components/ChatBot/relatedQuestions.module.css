@@ -1,9 +1,34 @@
 .relatedQuestionsTitle{
-    font-size: 1.1em;
+    font-size: 1em;
     color: #3454b8;
+    font-weight: 500;
 }
 
 .relatedQuestionsContainer{
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    height: fit-content;
     background-color: #eff6ff;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.questionOption{
+    cursor: pointer;
+    padding: 0.5em 0.7em;
+    background-color: #dbeafe;
+    color: #3454b8;
+    border-radius: 1em;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.questionsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
