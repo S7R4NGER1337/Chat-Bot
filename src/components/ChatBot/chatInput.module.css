@@ -1,0 +1,27 @@
+.chatInputContainer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.chatInputBtn{
+    width: 3em;
+    height: 2em;
+    padding: 0.2em;
+    background-color: #137fec;
+    border-radius: 5em;
+    cursor: pointer;
+}
+
+.chatInput{
+    border-radius: 2em;
+    border: none;
+    background-color: #f6f7f8;
+    color: black;
+    padding: 1em;
+    width: 70%;
+}
