@@ -30,7 +30,7 @@ export default function ChatBox() {
           <ChatMessage text={message.text} type={message.type} key={index}/>
         ))}
       </div>
-      <RelatedQuestions options={relatedQuestions}/>
+      {relatedQuestions.length > 0 && <RelatedQuestions options={relatedQuestions}/>}
       <ChatInput setMessages={setMessages} setRelatedQuestions={setRelatedQuestions}/>
     </div>
   );
