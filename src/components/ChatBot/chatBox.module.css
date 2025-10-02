@@ -10,3 +10,9 @@
     width: 20rem;
     border-radius: 0.6em;
 }
+
+.messagesContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
