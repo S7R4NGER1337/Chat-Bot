@@ -35,8 +35,6 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
       return;
     }
     if (botResponses.length === 1) {
-      console.log(botResponses);
-
       setMessages((prev) => [
         { text: "Do you have any other questions ?", type: "bot" },
         { text: botResponses[0].answer, type: "bot" },
