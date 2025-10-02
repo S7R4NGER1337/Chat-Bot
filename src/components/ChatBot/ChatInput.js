@@ -1,13 +1,26 @@
 import { useState } from "react";
 import styles from "./chatInput.module.css";
+import { FAQ } from "./FAQ";
 
 export default function ChatInput({ setMessages }) {
   const [message, setMessage] = useState("");
 
   function sendMessage() {
     if (message === "") return;
-    setMessages((prev) => [...prev, { text: message, type: "user" }]);
+    findBotQuestion()
+    // setMessages((prev) => [...prev, { text: message, type: "user" }]);
     setMessage("");
+  }
+
+  function findBotQuestion() {
+    const keyWords = message.split(' ')
+    const botResponses = []
+    keyWords.forEach(word => {
+        word = word.toLowerCase()
+        const response = FAQ.filter(response => response.question.includes(word))
+        botResponses.push(...response);
+    });
+    console.log(botResponses);
   }
 
   return (
