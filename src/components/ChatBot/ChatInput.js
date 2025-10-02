@@ -7,7 +7,7 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
 
   function sendMessage() {
     if (message === "") return;
-    setMessages((prev) => [...prev, { text: message, type: "user" }]);
+    // setMessages((prev) => [...prev, { text: message, type: "user" }]);
     findBotQuestion()
     setMessage("");
   }
@@ -17,10 +17,13 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
     const botResponses = []
     keyWords.forEach(word => {
         word = word.toLowerCase()
-        const response = FAQ.filter(response => response.question.includes(word))
+        const response = FAQ.filter(response => response.question.toLowerCase().includes(word))
         botResponses.push(...response);
     });
-    setRelatedQuestions(botResponses);
+    if(botResponses.length > 3) {
+        setRelatedQuestions(botResponses.splice(3, botResponses.length - 3));
+    }
+    setRelatedQuestions(botResponses)
   }
 
   return (
