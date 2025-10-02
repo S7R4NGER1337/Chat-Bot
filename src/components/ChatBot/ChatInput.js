@@ -24,6 +24,7 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
     });
     if (botResponses.length > 3) {
       setRelatedQuestions(botResponses.splice(3, botResponses.length - 3));
+      return;
     }
     if (botResponses.length === 0) {
       setMessages((prev) => [
@@ -31,6 +32,17 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
         { text: "You can contact us in your mail.", type: "bot" },
         ...prev,
       ]);
+      return;
+    }
+    if (botResponses.length === 1) {
+      console.log(botResponses);
+
+      setMessages((prev) => [
+        { text: "Do you have any other questions ?", type: "bot" },
+        { text: botResponses[0].answer, type: "bot" },
+        ...prev,
+      ]);
+      return;
     }
     setRelatedQuestions(botResponses);
   }
