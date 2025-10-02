@@ -21,3 +21,11 @@
     -ms-overflow-style: none;
     margin-bottom: 12%;
 }
+
+.showChat{
+    cursor: pointer;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 4rem;
+}
