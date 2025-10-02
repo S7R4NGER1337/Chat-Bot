@@ -2,13 +2,13 @@ import { useState } from "react";
 import styles from "./chatInput.module.css";
 import { FAQ } from "./faq";
 
-export default function ChatInput({ setMessages }) {
+export default function ChatInput({ setMessages, setRelatedQuestions }) {
   const [message, setMessage] = useState("");
 
   function sendMessage() {
     if (message === "") return;
+    setMessages((prev) => [...prev, { text: message, type: "user" }]);
     findBotQuestion()
-    // setMessages((prev) => [...prev, { text: message, type: "user" }]);
     setMessage("");
   }
 
@@ -20,7 +20,7 @@ export default function ChatInput({ setMessages }) {
         const response = FAQ.filter(response => response.question.includes(word))
         botResponses.push(...response);
     });
-    console.log(botResponses);
+    setRelatedQuestions(botResponses);
   }
 
   return (
