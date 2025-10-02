@@ -8,22 +8,31 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
   function sendMessage() {
     if (message === "") return;
     setMessages((prev) => [...prev, { text: message, type: "user" }]);
-    findBotQuestion()
+    findBotQuestion();
     setMessage("");
   }
 
   function findBotQuestion() {
-    const keyWords = message.split(' ')
-    const botResponses = []
-    keyWords.forEach(word => {
-        word = word.toLowerCase()
-        const response = FAQ.filter(response => response.question.toLowerCase().includes(word))
-        botResponses.push(...response);
+    const keyWords = message.split(" ");
+    const botResponses = [];
+    keyWords.forEach((word) => {
+      word = word.toLowerCase();
+      const response = FAQ.filter((response) =>
+        response.question.toLowerCase().includes(word)
+      );
+      botResponses.push(...response);
     });
-    if(botResponses.length > 3) {
-        setRelatedQuestions(botResponses.splice(3, botResponses.length - 3));
+    if (botResponses.length > 3) {
+      setRelatedQuestions(botResponses.splice(3, botResponses.length - 3));
     }
-    setRelatedQuestions(botResponses)
+    if (botResponses.length === 0) {
+      setMessages((prev) => [
+        ...prev,
+        { text: "You can contact us in your mail.", type: "bot" },
+        { text: "example@example.com", type: "bot" },
+      ]);
+    }
+    setRelatedQuestions(botResponses);
   }
 
   return (
