@@ -26,8 +26,8 @@ export default function ChatBox() {
     <div className={styles.chatBoxContainer}>
       <Header />
       <div className={styles.messagesContainer}>
-        {messages.map((message) => (
-          <ChatMessage text={message.text} type={message.type} />
+        {messages.map((message, index) => (
+          <ChatMessage text={message.text} type={message.type} key={index}/>
         ))}
       </div>
       <RelatedQuestions options={relatedQuestions}/>

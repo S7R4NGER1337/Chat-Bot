@@ -5,8 +5,8 @@ export default function RelatedQuestions({ options }) {
     <div className={styles.relatedQuestionsContainer}>
       <h1 className={styles.relatedQuestionsTitle}>Related questions: </h1>
       <div className={styles.questionsContainer}>
-        {options.map((option) => (
-          <p className={styles.questionOption} key={option.question}>
+        {options.map((option, index) => (
+          <p className={styles.questionOption} key={index}>
             {option.question}
           </p>
         ))}
