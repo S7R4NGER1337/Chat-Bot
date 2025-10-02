@@ -22,11 +22,16 @@ export default function ChatBox() {
   return (
     <>
       {status === "hidden" && (
-        <img onClick={() => setStatus('shown')} className={styles.showChat} src="/comments-solid-full.svg" alt="hiddenChat" />
+        <img
+          onClick={() => setStatus("shown")}
+          className={styles.showChat}
+          src="/comments-solid-full.svg"
+          alt="hiddenChat"
+        />
       )}
       {status === "shown" && (
         <div className={styles.chatBoxContainer}>
-          <Header setStatus={setStatus}/>
+          <Header setStatus={setStatus} />
           <div className={styles.messagesContainer}>
             {messages.map((message, index) => (
               <ChatMessage
