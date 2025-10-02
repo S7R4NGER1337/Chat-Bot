@@ -15,10 +15,10 @@ export default function RelatedQuestions({
             key={index}
             onClick={() => {
               setMessages((prev) => [
-                ...prev,
-                { text: option.question, type: 'user'},
-                { text: option.answer, type: "bot" },
                 { text: "Do you have any other questions ?", type: "bot" },
+                { text: option.answer, type: "bot" },
+                { text: option.question, type: 'user'},
+                ...prev,
               ]);
               hideRelatedQuestions();
             }}

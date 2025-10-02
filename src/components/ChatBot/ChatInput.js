@@ -7,7 +7,7 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
 
   function sendMessage() {
     if (message === "") return;
-    setMessages((prev) => [...prev, { text: message, type: "user" }]);
+    setMessages((prev) => [{ text: message, type: "user" }, ...prev]);
     findBotQuestion();
     setMessage("");
   }
@@ -27,9 +27,9 @@ export default function ChatInput({ setMessages, setRelatedQuestions }) {
     }
     if (botResponses.length === 0) {
       setMessages((prev) => [
-        ...prev,
-        { text: "You can contact us in your mail.", type: "bot" },
         { text: "example@example.com", type: "bot" },
+        { text: "You can contact us in your mail.", type: "bot" },
+        ...prev,
       ]);
     }
     setRelatedQuestions(botResponses);
