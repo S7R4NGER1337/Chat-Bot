@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./chatInput.module.css";
-import { FAQ } from "./FAQ";
+import { FAQ } from "./faq";
 
 export default function ChatInput({ setMessages }) {
   const [message, setMessage] = useState("");
