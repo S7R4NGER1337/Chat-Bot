@@ -3,7 +3,7 @@ import styles from "./chatBox.module.css";
 import ChatMessage from "./ChatMessage";
 import Header from "./Navigation";
 import ChatInput from "./ChatInput";
-import ReleatedQuestions from "./RelatedQuestions";
+import RelatedQuestions from "./RelatedQuestions";
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([
@@ -30,7 +30,7 @@ export default function ChatBox() {
           <ChatMessage text={message.text} type={message.type} />
         ))}
       </div>
-      <ReleatedQuestions options={relatedQuestions}/>
+      <RelatedQuestions options={relatedQuestions}/>
       <ChatInput setMessages={setMessages} setRelatedQuestions={setRelatedQuestions}/>
     </div>
   );

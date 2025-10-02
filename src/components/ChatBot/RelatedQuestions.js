@@ -1,8 +1,8 @@
-import styles from "./releatedQuestions.module.css";
+import styles from "./relatedQuestions.module.css";
 
-export default function ReleatedQuestions({ options }) {
+export default function RelatedQuestions({ options }) {
   return (
-    <div className={styles.releatedQuestionsContainer}>
+    <div className={styles.relatedQuestionsContainer}>
       <h1 className={styles.relatedQuestionsTitle}>Related questions</h1>
       <div className={styles.questionsContainer}>
         {options.map((option) => (
